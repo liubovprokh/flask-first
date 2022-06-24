@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Details - {{pet['name']}}
+{% endblock %}
+{% block head %}
+    <p class="title">{{pet['name']}}</p>
+{% endblock %}
+{% block content %}
+<body>
+<div class="table__container">
+    <table class="table__details">
+        <tr>
+            <td><img src="{{url_for('static', filename=pet['id']|string+'.jpeg')}}" height="500" ></td>
+        </tr>
+        <tr>
+            <td>{{pet['age']}}</td>
+        </tr>
+        <tr>
+            <td>{{pet['bio']}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+{% endblock %}
+
